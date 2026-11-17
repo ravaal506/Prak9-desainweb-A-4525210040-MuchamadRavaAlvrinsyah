@@ -1,0 +1,166 @@
+/* =========================================================
+   Selaras Coffee - Custom CSS
+   Identitas: hijau pinus + kuning ambar, motif lingkaran
+   konsentris (seperti latte art) yang melambangkan "selaras".
+   ========================================================= */
+
+/* ---------- 1. Design tokens ---------- */
+:root {
+  --espresso: #2B1D16;
+  --pine: #20443B;
+  --pine-dark: #183830;
+  --amber: #D68A1F;
+  --amber-dark: #B06F10;
+  --paper: #FAF8F3;
+  --sage: #B9C9B4;
+  --sage-soft: #E8EFE4;
+
+  --font-judul: "Young Serif", Georgia, serif;
+  --font-isi: "DM Sans", system-ui, sans-serif;
+  --radius: 14px;
+}
+
+/* ---------- 2. Dasar ---------- */
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+body {
+  font-family: var(--font-isi);
+  color: var(--espresso);
+  background: var(--paper);
+  line-height: 1.7;
+}
+h1, h2, h3, .navbar-brand, .footer-brand, .modal-title {
+  font-family: var(--font-judul);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+p { max-width: 62ch; }
+a { color: var(--pine); }
+:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
+
+/* ---------- 3. Tombol ---------- */
+.btn { border-radius: 999px; font-weight: 700; }
+.btn-amber { background: var(--amber); color: var(--espresso); border: 2px solid var(--amber); }
+.btn-amber:hover { background: var(--amber-dark); border-color: var(--amber-dark); color: #fff; }
+.btn-pine { background: var(--pine); color: var(--paper); border: 2px solid var(--pine); }
+.btn-pine:hover { background: var(--pine-dark); color: #fff; }
+.btn-outline-paper { color: var(--paper); border: 2px solid var(--paper); }
+.btn-outline-paper:hover { background: var(--paper); color: var(--pine); }
+.btn-outline-pine { color: var(--pine); border: 2px solid var(--pine); }
+.btn-outline-pine:hover { background: var(--pine); color: var(--paper); }
+
+/* ---------- 4. Navbar ---------- */
+.navbar-selaras { background: var(--pine); padding: .6rem 0; }
+.navbar-selaras .navbar-brand { color: var(--paper); font-size: 1.35rem; }
+.navbar-selaras .nav-link { color: #DCE6D8; font-weight: 500; padding: .5rem .9rem; }
+.navbar-selaras .nav-link:hover,
+.navbar-selaras .nav-link:focus { color: var(--amber); }
+.navbar-selaras .navbar-toggler { border-color: rgba(255,255,255,.4); }
+.navbar-selaras .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23FAF8F3' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* ---------- 5. Alert promo ---------- */
+.promo-wrap { padding-top: 84px; background: var(--pine); max-width: none; }
+.promo-wrap .alert { max-width: 1140px; margin: 0 auto 0; }
+.alert-promo {
+  background: var(--amber);
+  color: var(--espresso);
+  border: 0;
+  border-radius: var(--radius);
+  margin-bottom: 0;
+}
+
+/* ---------- 6. Hero ---------- */
+.hero {
+  background:
+    radial-gradient(circle at 85% 40%, transparent 0 140px, rgba(255,255,255,.04) 141px 143px, transparent 144px 220px, rgba(255,255,255,.04) 221px 223px, transparent 224px),
+    var(--pine);
+  color: var(--paper);
+  padding: 3.5rem 0 5rem;
+}
+.display-title {
+  font-size: clamp(2.2rem, 5.2vw, 3.8rem);
+  line-height: 1.12;
+  margin-bottom: 1.25rem;
+}
+.hero-lead { color: #DCE6D8; font-size: 1.15rem; margin-bottom: 1.75rem; }
+.hero-img {
+  width: 100%;
+  max-width: 440px;
+  border-radius: 50% 50% var(--radius) var(--radius);
+  border: 4px solid var(--amber);
+}
+.hero-facts { margin: 2rem 0 0; padding-left: 1rem; border-left: 3px solid var(--amber); color: #DCE6D8; }
+.hero-facts strong { color: var(--paper); }
+
+/* ---------- 7. Section umum ---------- */
+.section { padding: 5rem 0; }
+.section-tint { background: var(--sage-soft); }
+.section-title { font-size: clamp(1.7rem, 3.4vw, 2.4rem); margin-bottom: .75rem; }
+.section-sub { color: #5B4A40; margin-bottom: 2.5rem; }
+
+.about-img { border-radius: var(--radius); border: 3px solid var(--pine); }
+.stat {
+  height: 100%;
+  padding: 1rem;
+  border-left: 4px solid var(--amber);
+  background: #fff;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: .9rem;
+  line-height: 1.4;
+}
+.stat span { display: block; font-family: var(--font-judul); font-size: 1.7rem; color: var(--pine); }
+
+/* ---------- 8. Card produk ---------- */
+.card-produk {
+  border: 2px solid var(--pine);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #fff;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.card-produk:hover { transform: translateY(-4px); box-shadow: 6px 6px 0 var(--amber); }
+.card-produk .card-title { font-size: 1.25rem; }
+.card-produk .card-text { color: #5B4A40; }
+.harga { font-family: var(--font-judul); font-size: 1.25rem; color: var(--amber-dark); }
+
+/* ---------- 9. Form kontak ---------- */
+.kontak-list li { margin-bottom: 1rem; }
+.form-kontak {
+  background: #fff;
+  border: 2px solid var(--pine);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+}
+.form-kontak .form-label { font-weight: 700; }
+.form-kontak .form-control,
+.form-kontak .form-select { border: 2px solid var(--sage); border-radius: 10px; padding: .65rem .85rem; }
+.form-kontak .form-control:focus,
+.form-kontak .form-select:focus { border-color: var(--pine); box-shadow: 0 0 0 .2rem rgba(214,138,31,.35); }
+
+/* ---------- 10. Modal ---------- */
+.modal-selaras { border: 2px solid var(--pine); border-radius: var(--radius); overflow: hidden; background: var(--paper); }
+.modal-selaras .modal-header { border-bottom: 0; }
+.modal-selaras .modal-footer { border-top: 0; }
+.modal-img { width: 100%; max-height: 240px; object-fit: cover; }
+
+/* ---------- 11. Footer ---------- */
+.footer-selaras { background: var(--espresso); color: #D8CFC6; padding: 3.5rem 0 1.5rem; }
+.footer-brand { font-size: 1.4rem; color: var(--paper); }
+.footer-title { font-size: 1.05rem; color: var(--amber); margin-bottom: .75rem; }
+.footer-selaras a { color: #D8CFC6; text-decoration: none; }
+.footer-selaras a:hover { color: var(--amber); text-decoration: underline; }
+.footer-selaras li { margin-bottom: .35rem; }
+.footer-selaras hr { border-color: rgba(255,255,255,.2); margin: 2rem 0 1rem; }
+
+/* ---------- 12. Responsif & aksesibilitas ---------- */
+@media (max-width: 575.98px) {
+  .section { padding: 3.5rem 0; }
+  .hero { padding-bottom: 3.5rem; }
+  .form-kontak { padding: 1.15rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .card-produk { transition: none; }
+  .card-produk:hover { transform: none; }
+}
